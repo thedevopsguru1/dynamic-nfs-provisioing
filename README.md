@@ -16,6 +16,13 @@ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs
 helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=198.58.104.162  --set nfs.path=/srv/nfs/kubedata
 ```
 ###### Please change the ip addres and the path
+##### On AWS EFS , here it is
+####### Create a EFS and then copy the DNS name of the EFS
+![image](https://github.com/thedevopsguru1/dynamic-nfs-provisioing/assets/126810742/c2136ea6-eb7e-4f4c-bf39-3eed8f5ff764)
+
+```
+helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=fs-0e4070b4c27a59f48.efs.us-east-2.amazonaws.com  --set nfs.path=/
+```
 ### Let's test it by deploying a PVC and Pod 
 ```
 apiVersion: v1
