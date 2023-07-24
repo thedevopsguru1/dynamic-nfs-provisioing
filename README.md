@@ -15,6 +15,11 @@ helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs
 ```
 helm install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=198.58.104.162  --set nfs.path=/srv/nfs/kubedata
 ```
+#### You can change the nfs name and set it as default using :
+```
+helm upgrade --install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner --set nfs.server=fs-0e6c8b8e20cd5356f.efs.us-east-2.amazonaws.com  --set nfs.path=/ --set storageClass.defaultClass=default --set storageClass.name=second-nfs-client
+```
+
 ###### Please change the ip addres and the path
 ##### On AWS EFS , here it is
 ####### Create a EFS and then copy the DNS name of the EFS
